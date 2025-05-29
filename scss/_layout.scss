@@ -1,46 +1,31 @@
-.grid-demo {
-    padding: $padding;
-    @include generate-grid($grid-columns, $grid-gap);
-
-    .grid-item {
-        background-color: $card-bg;
-        padding: $padding;
-        border-radius: $border-radius;
-        box-shadow: $shadow-light;
-        @include transition(transform, box-shadow);
-
-        h3 {
-            margin-bottom: 0.5rem;
-        }
-
-        &:hover {
-            transform: translateY(-5px);
-            box-shadow: $shadow-hover;
-        }
-    }
-
-    // 📱 Responsive grid adjustments
-    @media (max-width: $breakpoint-lg) {
-        @include generate-grid(3, $grid-gap);
-    }
-
-    @media (max-width: $breakpoint-md) {
-        @include generate-grid(2, $grid-gap);
-    }
-
-    @media (max-width: $breakpoint-sm) {
-        @include generate-grid(1, $grid-gap);
-    }
-}
-
+// Layout Styles
 .layout-section {
-    margin-bottom: 4rem;
+    padding: 2rem;
+    border-radius: $border-radius;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
 
     h2 {
         text-align: center;
         color: $accent;
         margin-bottom: 1rem;
     }
+}
+
+.layout-section:nth-child(1) {
+    background: $bg-fixed;
+}
+
+.layout-section:nth-child(2) {
+    background: $bg-autofit;
+}
+
+.layout-section:nth-child(3) {
+    background: $bg-responsive;
+}
+
+.layout-section:nth-child(4) {
+    background: $bg-masonry;
 }
 
 // 🔢 Fixed Column

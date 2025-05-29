@@ -21,6 +21,41 @@ body {
             width: 100%;
             display: block;
         }
+
+        .grid-demo {
+            padding: $padding;
+            @include generate-grid($grid-columns, $grid-gap);
+
+            .grid-item {
+                background-color: $card-bg;
+                padding: $padding;
+                border-radius: $border-radius;
+                box-shadow: $shadow-light;
+                @include transition(transform, box-shadow);
+
+                h3 {
+                    margin-bottom: 0.5rem;
+                }
+
+                &:hover {
+                    transform: translateY(-5px);
+                    box-shadow: $shadow-hover;
+                }
+            }
+
+            // 📱 Responsive grid adjustments
+            @media (max-width: $breakpoint-lg) {
+                @include generate-grid(3, $grid-gap);
+            }
+
+            @media (max-width: $breakpoint-md) {
+                @include generate-grid(2, $grid-gap);
+            }
+
+            @media (max-width: $breakpoint-sm) {
+                @include generate-grid(1, $grid-gap);
+            }      
+        }
     }
 }
 
@@ -50,6 +85,8 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: $shadow-light;
+    font-weight: map-get($font-weight, bold);
 
     &.tall {
         height: 220px;
