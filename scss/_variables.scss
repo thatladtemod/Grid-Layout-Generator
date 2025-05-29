@@ -17,3 +17,15 @@ $accent: #7b61ff;
 $padding: 1.5rem;
 $bg-padding: 2rem;
 $border-radius: 0.75rem;
+
+// ==== Typography ====
+$font-family: 'Segoe UI', sans-serif;
+$font-weight: (
+    "normal": 400,
+    "medium": 500,
+    "bold": 700,
+);
+
+// ===Shadows===
+$shadow-light: 0 2px 6px rgba(0, 0, 0, 0.05);
+$shadow-hover: 0 10px 24px rgba(0, 0, 0, 0.08);

@@ -28,9 +28,19 @@ h3 {
   color: #7b61ff;
 }
 
-p {
+a {
   font-size: 0.95rem;
   color: #090909;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: color, -webkit-text-decoration 0.3s ease-in-out;
+  transition: color, text-decoration 0.3s ease-in-out;
+  transition: color, text-decoration 0.3s ease-in-out, -webkit-text-decoration 0.3s ease-in-out;
+}
+a:hover {
+  color: #7b61ff;
+  text-decoration: underline;
 }
 
 .grid-item-main {
@@ -136,7 +146,7 @@ p {
 
 .masonry-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1rem;
 }
 .masonry-grid .tall {
