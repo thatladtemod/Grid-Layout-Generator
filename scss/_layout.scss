@@ -1,0 +1,84 @@
+.grid-demo {
+    padding: $padding;
+    @include generate-grid($grid-columns, $grid-gap);
+
+    .grid-item {
+        background-color: $card-bg;
+        padding: $padding;
+        border-radius: $border-radius;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        @include transition(transform, box-shadow);
+
+        h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+        }
+    }
+
+    // 📱 Responsive grid adjustments
+    @media (max-width: $breakpoint-lg) {
+        @include generate-grid(3, $grid-gap);
+    }
+
+    @media (max-width: $breakpoint-md) {
+        @include generate-grid(2, $grid-gap);
+    }
+
+    @media (max-width: $breakpoint-sm) {
+        @include generate-grid(1, $grid-gap);
+    }
+}
+
+.layout-section {
+    margin-bottom: 4rem;
+
+    h2 {
+        text-align: center;
+        color: $accent;
+        margin-bottom: 1rem;
+    }
+}
+
+// 🔢 Fixed Column
+.fixed-grid {
+    @include generate-grid(3, 1.25rem);
+}
+
+// 📐 Auto-Fit Layout
+.auto-fit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.25rem;
+}
+
+// 📱 Responsive Layout
+.responsive-grid {
+    @include generate-grid($grid-columns, 1rem);
+
+    @media (max-width: $breakpoint-lg) {
+        @include generate-grid(3, 1rem);
+    }
+
+    @media (max-width: $breakpoint-md) {
+        @include generate-grid(2, 1rem);
+    }
+
+    @media (max-width: $breakpoint-sm) {
+        @include generate-grid(1, 1rem);
+    }
+}
+
+// 🧱 Masonry Mock
+.masonry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+
+    .tall {
+        grid-row: span 2;
+    }
+}

@@ -1,0 +1,48 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: $background;
+    color: $text-color;
+    line-height: 1.6;
+    font-size: 16px;
+    padding: $bg-padding;
+
+    header {
+        background: $card-bg;
+        padding: $padding;
+        border-radius: $border-radius;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        margin-bottom: $padding;
+
+        .section-title {
+            font-size: $padding;
+            margin-bottom: $padding;
+            color: $accent;
+            text-align: center;   
+            width: 100%;
+            display: block;
+        }
+    }
+}
+
+h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: $accent;
+}
+
+p {
+    font-size: 0.95rem;
+    color: darken($text-color, 10%);
+}
+
+.grid-item-main {
+    background-color: lighten($card-bg, 2%);
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.tall {
+        height: 220px;
+    }
+}

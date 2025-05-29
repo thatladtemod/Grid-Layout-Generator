@@ -3,3 +3,13 @@
     grid-template-columns: repeat($columns, 1fr);
     gap: $gap;
 }
+
+@mixin transition($props...) {
+    transition: $props 0.3s ease-in-out;
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
